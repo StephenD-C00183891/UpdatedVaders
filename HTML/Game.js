@@ -117,37 +117,41 @@ Game.prototype.onTouchStart = function(e)
 	e.preventDefault();
 	touches = e.touches; 
 
-	game.manager.GameStates[1].checkCollision(e.touches[0].clientX, e.touches[0].clientY);
-	game.manager.GameStates[1].checkBulletCollision(e.touches[0].clientX, e.touches[0].clientY);
-
-	if(game.manager.state.name == "Game Playing")
+	for(var i = 0; i < touches.length; i ++)
 	{
-		game.manager.GameStates[1].menuClick(e.touches[0].clientX, e.touches[0].clientY);
-	}
 
-	if(game.manager.state.name == "Pause")
-	{
-		game.manager.GameStates[2].menuClick(e.touches[0].clientX, e.touches[0].clientY);
-	}
+		game.manager.GameStates[1].checkCollision(e.touches[i].clientX, e.touches[i].clientY);
+		game.manager.GameStates[1].checkBulletCollision(e.touches[i].clientX, e.touches[i].clientY);
 
-	if(game.manager.state.name == "Title")
-	{
-		game.manager.GameStates[0].menuClick(e.touches[0].clientX, e.touches[0].clientY);
-	}
+		if(game.manager.state.name == "Game Playing")
+		{
+			game.manager.GameStates[1].menuClick(e.touches[i].clientX, e.touches[i].clientY);
+		}
 
-	if(game.manager.state.name == "Game Over")
-	{
-		game.manager.GameStates[3].menuClick(e.touches[0].clientX, e.touches[0].clientY);
-	}
+		if(game.manager.state.name == "Pause")
+		{
+			game.manager.GameStates[2].menuClick(e.touches[i].clientX, e.touches[i].clientY);
+		}
 
-	if(game.manager.state.name == "Score")
-	{
-		game.manager.GameStates[4].menuClick(e.touches[0].clientX, e.touches[0].clientY);
-	}
+		if(game.manager.state.name == "Title")
+		{
+			game.manager.GameStates[0].menuClick(e.touches[i].clientX, e.touches[i].clientY);
+		}
 
-	if(game.manager.state.name == "Options")
-	{
-		game.manager.GameStates[5].menuClick(e.touches[0].clientX, e.touches[0].clientY);
+		if(game.manager.state.name == "Game Over")
+		{
+			game.manager.GameStates[3].menuClick(e.touches[i].clientX, e.touches[i].clientY);
+		}
+
+		if(game.manager.state.name == "Score")
+		{
+			game.manager.GameStates[4].menuClick(e.touches[i].clientX, e.touches[i].clientY);
+		}
+
+		if(game.manager.state.name == "Options")
+		{
+			game.manager.GameStates[5].menuClick(e.touches[i].clientX, e.touches[i].clientY);
+		}
 	}
 }
 

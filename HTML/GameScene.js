@@ -443,12 +443,17 @@ GameScene.prototype.checkEndCollision = function()
 	//this.p1SlowRight = true;
 	//this.p2SlowLeft = true;
 	//this.p2SlowRight = true;
-	game.manager.GameStates[1].p1MoveLeft = false;
-	game.manager.GameStates[1].p1MoveRight = false;
 
-	game.manager.GameStates[1].p2MoveLeft = false;
-	game.manager.GameStates[1].p2MoveRight = false;
 
+
+	//if(game.manager.GameStates[1].m_fireRequest == false && game.manager.GameStates[1].m_fireRequest2 == false)
+	//{
+		this.p1MoveLeft = false;
+		this.p1MoveRight = false;
+
+		this.p2MoveLeft = false;
+		this.p2MoveRight = false;
+	//}
 	//game.manager.GameStates[1].playerList[0].Stop();
 }
 
