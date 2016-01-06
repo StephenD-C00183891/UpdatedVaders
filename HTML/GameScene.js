@@ -52,6 +52,8 @@ function GameScene()
     this.p2MoveLeft = false;
     this.p2MoveRight = false;
 
+    this.shot = false;
+    this.shot2 = false;
     //this.p1SlowLeft = false;
   //  this.p1SlowRight = false;
    // this.p2SlowLeft = false;
@@ -446,14 +448,20 @@ GameScene.prototype.checkEndCollision = function()
 
 
 
-	//if(game.manager.GameStates[1].m_fireRequest == false && game.manager.GameStates[1].m_fireRequest2 == false)
-	//{
+	if(this.shot == false && this.shot2 == false)
+	{
 		this.p1MoveLeft = false;
 		this.p1MoveRight = false;
 
 		this.p2MoveLeft = false;
 		this.p2MoveRight = false;
-	//}
+
+	}
+	else
+	{
+		this.shot = false;
+		this.shot2 = false;
+	}
 	//game.manager.GameStates[1].playerList[0].Stop();
 }
 
@@ -462,12 +470,14 @@ GameScene.prototype.checkBulletCollision = function(mousex, mousey)
 	if (mousex> (canvas.width / 9.2) && mousex < (canvas.width / 1.15) && mousey > (canvas.height / 1.3) && mousey < (canvas.height / 1))
 	{
 		game.manager.GameStates[1].m_fireRequest = true;
+		this.shot = true;
 		//this.playSound("shoot");
     }
 
    if (mousex> (canvas.width / 9.2) && mousex < (canvas.width / 1.15) && mousey > 0 && mousey < (canvas.height / 6))
 	{
 		game.manager.GameStates[1].m_fireRequest2 = true;
+		this.shot2 = true
 		//this.playSound("shoot");
 	}
 }
