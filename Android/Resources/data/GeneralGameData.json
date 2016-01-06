@@ -1,0 +1,40 @@
+{
+	"global_settings": {
+		"texture_background_file": "GameScreen/Background.png",
+		"texture_atlas_image_file": "GameScreen/myplist.png",
+		"texture_atlas_plist_file": "GameScreen/myplist.plist",
+		"player": {
+			"player_base_file": "GameScreen/player.png",
+			"player_plist_file": "GameScreen/player.plist",
+			"player_width": 29,
+			"player_height": 61,
+			"number_of_players": 2
+		},
+		"projectile": {
+			"projectile_file": "GameScreen/laser.png",
+			"projectileplist_file": "GameScreen/laser.plist",
+			"projectile_centre": {
+				"x": 6,
+				"y": 9
+			},
+			"velocity": 0.50
+		},
+		"ai": {
+			"ai_image_file": "GameScreen/walking.png",
+			"ai_plist_file": "GameScreen/walking.plist",
+			"max_num_ai": 24,
+			"ai_spawn_interval": 1,
+			"ai_scale": 0.7,
+			"ai_walking_spritesheet": {
+				"rows": 1,
+				"columns": 6,
+				"width": 232,
+				"height": 282
+			}
+		},
+		"shield": {
+			"shield_plist_file": "GameScreen/shield.plist",
+			"shield_image_file": "GameScreen/shield.png"
+		}
+	}
+}
